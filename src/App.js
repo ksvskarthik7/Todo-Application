@@ -56,64 +56,66 @@ const TodoApp = () => {
   );
 
   return (
-    <div className="todo-app">
-      <h1>Todo App</h1>
-      <div className="todo-input">
-        <input
-          type="text"
-          value={newTodo}
-          onChange={(e) => setNewTodo(e.target.value)}
-          placeholder="Enter a new todo"
-        />
-        <button onClick={addTodo}>Add Todo</button>
-      </div>
+    <div className="todoapp">
+      <div className="todo-app-container">
+        <h1>Todo App</h1>
+        <div className="todo-input">
+          <input
+            type="text"
+            value={newTodo}
+            onChange={(e) => setNewTodo(e.target.value)}
+            placeholder="Enter a new todo"
+          />
+          <button onClick={addTodo}>Add Todo</button>
+        </div>
 
-      <div className="search-sort">
-        <input
-          type="text"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="Search"
-        />
-        <label>
-          Sort by:
-          <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-            <option value="asc">Ascending</option>
-            <option value="desc">Descending</option>
-          </select>
-        </label>
-      </div>
+        <div className="search-sort">
+          <input
+            type="text"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            placeholder="Search"
+          />
+          <label>
+            Sort by:
+            <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+              <option value="asc">Ascending</option>
+              <option value="desc">Descending</option>
+            </select>
+          </label>
+        </div>
 
-      <ul className="todo-list">
-        {filteredTodos.map((todo, index) => (
-          <li
-            key={index}
-            className={`todo-item ${todo.completed ? 'completed' : ''} ${
-              todo.show ? 'show' : 'hide'
-            }`}
-          >
-            <input
-              type="checkbox"
-              checked={todo.completed}
-              onChange={() => toggleCompleted(index)}
-            />
-            <input
-              type="text"
-              value={todo.task}
-              onChange={(e) => updateTodo(index, e.target.value)}
-            />
-            <button onClick={() => deleteTodo(index)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+        <ul className="todo-list">
+          {filteredTodos.map((todo, index) => (
+            <li
+              key={index}
+              className={`todo-item ${todo.completed ? 'completed' : ''} ${
+                todo.show ? 'show' : 'hide'
+              }`}
+            >
+              <input
+                type="checkbox"
+                checked={todo.completed}
+                onChange={() => toggleCompleted(index)}
+              />
+              <input
+                type="text"
+                value={todo.task}
+                onChange={(e) => updateTodo(index, e.target.value)}
+              />
+              <button onClick={() => deleteTodo(index)}>Delete</button>
+            </li>
+          ))}
+        </ul>
 
-      <div className="checkbox-container">
-        <input
-          type="checkbox"
-          checked={selectAll}
-          onChange={handleCheckboxClick}
-        />
-        <span>Select All</span>
+        <div className="checkbox-container">
+          <input
+            type="checkbox"
+            checked={selectAll}
+            onChange={handleCheckboxClick}
+          />
+          <span>Select All</span>
+        </div>
       </div>
     </div>
   );

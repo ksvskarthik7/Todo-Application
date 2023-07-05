@@ -1,4 +1,7 @@
-.todo-app {
+.todoapp{
+  background-color: #4e97d3;
+}
+.todo-app-container {
   max-width: 500px;
   margin: 0 auto;
   padding: 20px;
