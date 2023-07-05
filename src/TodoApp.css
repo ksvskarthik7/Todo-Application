@@ -1,3 +1,41 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* Apply font styles to elements */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.todo-input input[type="text"],
+.search-sort input[type="text"],
+.todo-list li input[type="text"] {
+  font-family: 'Poppins', sans-serif;
+}
+
+.todo-input button,
+.search-sort label,
+.todo-list li button,
+.checkbox-container span {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Rest of the CSS styles */
+.todo-app {
+  /* ... */
+}
+
+/* Rest of the CSS styles */
+
+
+
+
+
+
 .todoapp{
   background-color: #4e97d3;
 }
